@@ -126,7 +126,7 @@ class Provider extends ProviderBase {
     $req = new FortieRequest();
     $req->method('POST');
     $req->path($this->basePath);
-    $req->params(['folderid' => $folderId]);
+    $req->param('folderid', $folderId);
     $req->filePath($filePath);
 
     return $this->send($req->build());
@@ -145,7 +145,7 @@ class Provider extends ProviderBase {
     $req = new FortieRequest();
     $req->method('POST');
     $req->path($this->basePath);
-    $req->params(['path' => $path]);
+    $req->param('path', $path);
     $req->filePath($filePath);
 
     return $this->send($req->build());
@@ -179,7 +179,7 @@ class Provider extends ProviderBase {
     $req = new FortieRequest();
     $req->method('DELETE');
     $req->path($this->basePath);
-    $req->params(['path' => $path]);
+    $req->param('path', $path);
 
     return $this->send($req->build());
   }
